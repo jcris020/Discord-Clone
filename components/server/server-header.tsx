@@ -32,7 +32,7 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
                         transition"
                 >
                         {server.name}
-                        <ChevronDown className="h-5 w-5 ml-auto" />
+                        <ChevronDown className="h-5 w-5 md:ml-auto sm:ml-2" />
                 </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
