@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 
 export async function DELETE(
     req: Request,
-    { params }: { paramsL: { channelId: string } }
+    { params }: { params: { channelId: string } }
 ) {
     try {
         const profile = await currentProfile();
@@ -19,7 +19,7 @@ export async function DELETE(
         }
 
         if(!serverId) {
-            return new NextResponse("Server ID missing", { status: 400});
+            return new NextResponse("Server ID missing", { status: 400 });
         }
 
         if(!params.channelId) {
@@ -59,7 +59,7 @@ export async function DELETE(
 
 export async function PATCH(
     req: Request,
-    { params }: { paramsL: { channelId: string } }
+    { params }: { params: { channelId: string } }
 ) {
     try {
         const profile = await currentProfile();
@@ -73,7 +73,7 @@ export async function PATCH(
         }
 
         if(!serverId) {
-            return new NextResponse("Server ID missing", { status: 400});
+            return new NextResponse("Server ID missing", { status: 400 });
         }
 
         if(!params.channelId) {
