@@ -77,7 +77,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponseS
         })
 
         if(!message || message.deleted) {
-            return res.status(404).json({ error: "Internal Error" });
+            return res.status(404).json({ error: "Message not found" });
         }
 
         const isMessageOwner = message.memberId === member.id;
@@ -110,7 +110,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponseS
         }
 
         if(req.method === "PATCH") {
-            if(!message) {
+            if(!isMessageOwner) {
                 return res.status(401).json({ error: "Unauthorized" });
             }
 
